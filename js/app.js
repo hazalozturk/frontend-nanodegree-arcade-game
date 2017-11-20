@@ -42,6 +42,20 @@ var Player = function(x, y, speed) {
   this.sprite = 'images/char-boy.png';
 }
 
+Player.prototype.handleInput = function(keyPress) {
+  if (keyPress == 'left') {
+    player.x -= player.speed;
+  }
+  if (keyPress == 'right') {
+    player.x += player.speed;
+  }
+  if (keyPress == 'up') {
+    player.y -= player.speed;
+  }
+  if (keyPress == 'down') {
+    player.y += player.speed;
+  }
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
