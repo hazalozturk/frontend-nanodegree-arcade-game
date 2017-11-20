@@ -66,7 +66,41 @@ Player.prototype.handleInput = function(keyPress) {
   }
 }
 
-// Now instantiate your objects.
+var checkCollision = function(anEnemy) {
+  // check for collision between enemy and player
+  if (
+        player.y + 131 >= anEnemy.y + 90 &&
+        player.x + 25 <= anEnemy.x + 88 &&
+        player.y + 73 <= anEnemy.y + 135 &&
+        player.x + 76 >= anEnemy.x + 11) {
+        console.log('OOPS!');
+        player.x = 202;
+        player.y = 383;
+  }
+
+  // make player start over when reaching water
+  if (player.y + 43 <= 0) {
+      player.x = 202;
+      player.y = 383;
+      console.log('yaay!');
+  }
+
+  // make player stay between canvas limits
+  if (player.x + 65 >= 505) {
+    player.x = 405;
+    console.log('reached right limit!');
+  }
+  if (player.x < 2.5) {
+    player.x = 2.5;
+    console.log('reached left limit');
+  }
+  if (player.y > 383) {
+    player.y = 383;
+    console.log('reached down limit');
+  }
+}
+
+
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
