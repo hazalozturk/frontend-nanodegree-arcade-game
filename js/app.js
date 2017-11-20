@@ -42,6 +42,15 @@ var Player = function(x, y, speed) {
   this.sprite = 'images/char-boy.png';
 }
 
+// Draw the player on the screen, required method for game
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.update = function() {
+  //not needed for now
+}
+
 Player.prototype.handleInput = function(keyPress) {
   if (keyPress == 'left') {
     player.x -= player.speed;
