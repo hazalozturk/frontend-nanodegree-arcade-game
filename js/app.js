@@ -103,8 +103,20 @@ var checkCollision = function(anEnemy) {
 
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+// Place enemy randomly on canvas
+var allEnemies = [];
 
+var player = new Player(202, 383, 50);
 
+//Function taken from here: https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+for (i=0; i<5; i++) {
+    var enemy = new Enemy(0, getRandomInt(50, 234), getRandomInt(0, 256))
+    allEnemies.push(enemy)
+}
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
