@@ -53,16 +53,16 @@ Player.prototype.update = function() {
 
 Player.prototype.handleInput = function(keyPress) {
   if (keyPress == 'left') {
-    player.x -= player.speed;
+    this.x -= player.speed;
   }
   if (keyPress == 'right') {
-    player.x += player.speed;
+    this.x += player.speed;
   }
   if (keyPress == 'up') {
-    player.y -= player.speed;
+    this.y -= player.speed;
   }
   if (keyPress == 'down') {
-    player.y += player.speed;
+    this.y += player.speed;
   }
 }
 
